@@ -122,6 +122,9 @@ html {
    =================================== */
 
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
   background-color: var(--color-surface);
 }
 
@@ -258,6 +261,7 @@ html {
    =================================== */
 
 .product-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -277,6 +281,22 @@ html {
 
 .product-card--discount {
   border-color: var(--color-danger);
+}
+
+.product-card__badge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: 4px 8px;
+  color: var(--color-white);
+  background-color: var(--color-danger);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  z-index: 1;
+}
+
+.product-card--featured .product-card__badge {
+  background-color: var(--color-primary);
 }
 
 .product-card__title {
@@ -387,7 +407,94 @@ html {
 }
 
 /* ===================================
-   15. Модальное окно (order-dialog)
+   15. Страница товара (product-detail)
+   =================================== */
+
+.product-detail {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+  padding: 0 var(--space-lg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.product-detail__image {
+  position: relative;
+  padding: var(--space-xl);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.product-detail__placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 260px;
+  color: var(--color-muted);
+  font-size: 18px;
+}
+
+.product-detail__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.product-detail__title {
+  margin: 0;
+  font-size: 28px;
+}
+
+.product-detail__description {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.product-detail__price {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ===================================
+   16. Таблица характеристик (product-table)
+   =================================== */
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.product-table caption {
+  padding: var(--space-sm) 0;
+  font-weight: 700;
+  text-align: left;
+}
+
+.product-table th,
+.product-table td {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.product-table thead th {
+  background-color: var(--color-surface);
+  font-weight: 700;
+}
+
+.product-table tbody tr:nth-child(even) {
+  background-color: var(--color-surface);
+}
+
+/* ===================================
+   17. Модальное окно (order-dialog)
    =================================== */
 
 .order-dialog {
@@ -395,6 +502,7 @@ html {
   padding: var(--space-lg);
   border: none;
   border-radius: var(--radius-lg);
+  z-index: 100;
 }
 
 .order-dialog::backdrop {
@@ -406,7 +514,7 @@ html {
 }
 
 /* ===================================
-   16. Форма заявки (order-form)
+   18. Форма заявки (order-form)
    =================================== */
 
 .order-form__field {
@@ -467,7 +575,7 @@ html {
 }
 
 /* ===================================
-   17. Сообщение об успехе (success-message)
+   19. Сообщение об успехе (success-message)
    =================================== */
 
 .success-message {
@@ -479,7 +587,40 @@ html {
 }
 
 /* ===================================
-   18. Подвал сайта (site-footer)
+   20. Кнопка «Наверх» (up-button)
+   =================================== */
+
+.up-button {
+  position: fixed;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.up-button:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.up-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* ===================================
+   21. Подвал сайта (site-footer)
    =================================== */
 
 .site-footer {

@@ -23,16 +23,13 @@
             <a class="site-nav__link" href="catalog.html">Каталог</a>
           </li>
           <li class="site-nav__item">
+            <a class="site-nav__link" href="product.html">Товар</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="order.html">Заявка</a>
+          </li>
+          <li class="site-nav__item">
             <a class="site-nav__link" href="contacts.html">Контакты</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
           </li>
         </ul>
       </nav>
@@ -66,7 +63,8 @@
 
       <div class="products-grid">
 
-        <article class="product-card">
+        <article class="product-card product-card--featured">
+          <span class="product-card__badge">Хит</span>
           <h3 class="product-card__title">Товар 1</h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 1000 руб.</p>
@@ -84,7 +82,8 @@
           </button>
         </article>
 
-        <article class="product-card">
+        <article class="product-card product-card--discount">
+          <span class="product-card__badge">Скидка</span>
           <h3 class="product-card__title">Товар 3</h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 2000 руб.</p>
@@ -205,6 +204,8 @@
   <p class="success-message" id="success-message" hidden>
     Форма успешно отправлена!
   </p>
+
+  <a class="up-button" href="#" aria-label="Наверх">↑</a>
 
 </body>
 </html>
